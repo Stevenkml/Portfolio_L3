@@ -1,0 +1,44 @@
+
+:root{
+  --bg:#f7f7fb;
+  --accent:#0b5cff;
+  --text:#222;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+body{background:var(--bg);color:var(--text);padding:1rem}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 1rem;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.logo{margin:0;font-size:1.1rem}
+.main-nav{margin-left:1rem}
+.nav-list{list-style:none;display:flex;gap:0.5rem;align-items:center;padding:0;margin:0}
+.nav-list a{display:inline-block;padding:0.5rem 0.75rem;border-radius:6px;text-decoration:none;color:var(--text)}
+.nav-list a:hover,.nav-list a:focus{background:rgba(11,92,255,0.08);outline:none}
+
+/* Dropdown using details/summary */
+.dropdown details{position:relative}
+.dropdown summary{list-style:none;cursor:pointer;padding:0.5rem 0.75rem;border-radius:6px}
+.dropdown summary::-webkit-details-marker{display:none}
+.dropdown summary:focus{outline:2px solid rgba(11,92,255,0.18);border-radius:6px}
+
+.dropdown-list{position:absolute;left:0;margin-top:0.25rem;padding:0.25rem;border-radius:8px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.08);list-style:none;min-width:180px}
+.dropdown-list li{padding:0}
+.dropdown-list a{display:block;padding:0.5rem 0.75rem}
+.dropdown-list a:hover{background:rgba(0,0,0,0.03)}
+
+/* Hide dropdown by default; details open will show it */
+.dropdown .dropdown-list{display:none}
+.dropdown[open] .dropdown-list{display:block}
+
+/* For browsers that don't reflect open on parent li, use details[open] selector */
+.dropdown details[open] .dropdown-list{display:block}
+
+main{margin-top:1rem}
+section{background:#fff;padding:1rem;border-radius:8px;margin-bottom:0.75rem;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+.site-footer{text-align:center;margin-top:1rem;color:#666}
+
+/* Responsive: stack nav on small screens */
+@media (max-width:640px){
+  .site-header{flex-direction:column;align-items:flex-start}
+  .nav-list{flex-wrap:wrap}
+}
+
