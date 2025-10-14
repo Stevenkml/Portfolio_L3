@@ -4,244 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Systèmes d'Information</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        h1 {
-            color: #667eea;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        nav {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .nav-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
-        }
-
-        .nav-btn.active {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-            box-shadow: 0 6px 12px rgba(118, 75, 162, 0.4);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .section {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .card-title {
-            color: #667eea;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .card-description {
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .content-area {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 1.5rem;
-            min-height: 200px;
-            border-left: 4px solid #667eea;
-        }
-
-        .upload-zone {
-            border: 2px dashed #667eea;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            color: #666;
-            background: #f8f9fa;
-            margin-top: 1rem;
-        }
-
-        .file-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .file-item {
-            background: white;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .file-item:hover {
-            background: #f8f9fa;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .cert-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .cert-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            border-left: 4px solid #667eea;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 5px;
-        }
-
-        .section-intro {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .section-intro h2 {
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .nav-content {
-                flex-direction: column;
-            }
-
-            .nav-btn {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -301,28 +64,39 @@
             <div class="card">
                 <h3 class="card-title">Rubrique 1 : Travaux en Classe</h3>
                 <p class="card-description">Gérer et organiser ses productions académiques</p>
+            
                 <div class="content-area">
                     <p>Tous les dossiers réalisés en classe sont disponibles ci-dessous :</p>
+            
                     <ul class="file-list">
                         <li class="file-item">
-                            <span>📄 Travail 1 - [Titre]</span>
-                            <span style="color: #667eea;">Déposé</span>
+                            <span>📄 TD1.docx</span>
+                            <a href="Documents/SI/TD1 SI.docx" download="TD1.docx" 
+                               style="color: #667eea; text-decoration: none; font-weight: bold; margin-left: 10px;">
+                               Télécharger →
+                            </a>
                         </li>
+            
                         <li class="file-item">
                             <span>📄 Travail 2 - [Titre]</span>
                             <span style="color: #667eea;">Déposé</span>
                         </li>
+            
                         <li class="file-item">
                             <span>📄 Travail 3 - [Titre]</span>
                             <span style="color: #667eea;">Déposé</span>
                         </li>
                     </ul>
                 </div>
+            
                 <div class="upload-zone">
                     <p>💡 Ajoutez vos fichiers ici</p>
-                    <p style="font-size: 0.9rem; color: #999;">Glissez-déposez vos documents ou cliquez pour sélectionner</p>
+                    <p style="font-size: 0.9rem; color: #999;">
+                        Glissez-déposez vos documents ou cliquez pour sélectionner
+                    </p>
                 </div>
             </div>
+            
         </section>
 
         <!-- Section 2: Notes de Cours -->
@@ -514,36 +288,6 @@
         <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Développé avec HTML, CSS et JavaScript | Hébergé sur GitHub</p>
     </footer>
 
-    <script>
-        function showSection(sectionId) {
-            // Masquer toutes les sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Désactiver tous les boutons
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(button => {
-                button.classList.remove('active');
-            });
-
-            // Afficher la section demandée
-            document.getElementById(sectionId).classList.add('active');
-
-            // Activer le bouton correspondant
-            event.target.classList.add('active');
-
-            // Scroll vers le haut
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Afficher la date de dernière mise à jour
-        document.getElementById('lastUpdate').textContent = new Date().toLocaleDateString('fr-FR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
