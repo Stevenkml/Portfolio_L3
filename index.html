@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Systèmes d'Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Portfolio Numérique</h1>
+            <p class="subtitle">Introduction aux Systèmes d'Information - Semestre 5 MIAGE</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-content">
+            <button class="nav-btn active" onclick="showSection('accueil')">Accueil</button>
+            <button class="nav-btn" onclick="showSection('travaux')">Travaux Demandés</button>
+            <button class="nav-btn" onclick="showSection('notes')">Notes de Cours</button>
+            <button class="nav-btn" onclick="showSection('documents')">Documents SI</button>
+            <button class="nav-btn" onclick="showSection('certifications')">Certifications</button>
+            <button class="nav-btn" onclick="showSection('projet')">Projet Final</button>
+            <button class="nav-btn" onclick="showSection('soutenance')">Soutenance</button>
+            <button class="nav-btn" onclick="showSection('ressources')">Ressources</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Section Accueil -->
+        <section id="accueil" class="section active">
+            <div class="section-intro">
+                <h2>Bienvenue sur mon Portfolio</h2>
+                <p>Ce portfolio présente l'ensemble de mes travaux réalisés dans le cadre du module <strong>Introduction aux Systèmes d'Information</strong>.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">À propos de ce portfolio</h3>
+                <div class="content-area">
+                    <p><strong>Objectif :</strong> Centraliser et présenter tous les travaux académiques du semestre 5.</p>
+                    <p><strong>Compétences développées :</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                        <li>Développement web (HTML, CSS, JavaScript)</li>
+                        <li>Gestion de version avec Git</li>
+                        <li>Organisation et structuration de l'information</li>
+                        <li>Documentation de projets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>📅 Dernière mise à jour :</strong> <span id="lastUpdate"></span>
+            </div>
+        </section>
+
+        <!-- Section 1: Travaux Demandés -->
+        <section id="travaux" class="section">
+            <div class="section-intro">
+                <h2>📚 Travaux Demandés</h2>
+                <p>Dossiers et exercices réalisés en classe</p>
+            </div>
+
+          <ul class="file-list">
+    <!-- TD1 -->
+   <li class="file-item">
+        <span>📄 TD1 - Systèmes d'Information</span>
+        <a href="TD-1-SI.docx" download="TD-1-SI.docx">
+            Télécharger →
+        </a>
+    </li>
+    <!-- TD2 -->
+    <li class="file-item">
+        <span>📄 TD2 - Systèmes d'Information</span>
+        <a href="TD2 si.odt" download>
+            Télécharger →
+        </a>
+    </li>
+ <li class="file-item">
+        <span>📄 TP Odoo - Systèmes d'Information</span>
+        <a href="TP Odoo.odt" download>
+            Télécharger →
+        </a>
+    </li>
+
+
+</ul>
+
+                        </li>
+            
+                        <li class="file-item">
+                            <span>📄 Travail 2 - [Titre]</span>
+                            <span style="color: #667eea;">Déposé</span>
+                        </li>
+            
+                        <li class="file-item">
+                            <span>📄 Travail 3 - [Titre]</span>
+                            <span style="color: #667eea;">Déposé</span>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="upload-zone">
+                    <p>💡 Ajoutez vos fichiers ici</p>
+                    <p style="font-size: 0.9rem; color: #999;">
+                        Glissez-déposez vos documents ou cliquez pour sélectionner
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Section 2: Notes de Cours -->
+        <section id="notes" class="section">
+            <div class="section-intro">
+                <h2>📝 Notes de Cours Individuelles</h2>
+                <p>Prise de notes et gestion des ressources personnelles</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Rubrique 2 : Mes Notes de Cours</h3>
+                <p class="card-description">Développer une autonomie dans la prise de notes</p>
+                <div class="content-area">
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">Cours 1 : Introduction aux SI</h4>
+                    <p>Définition d'un système d'information, composants, enjeux...</p>
+                    
+                    <h4 style="color: #667eea; margin: 1.5rem 0 1rem;">Cours 2 : Modélisation</h4>
+                    <p>UML, diagrammes de classes, cas d'utilisation...</p>
+                    
+                    <h4 style="color: #667eea; margin: 1.5rem 0 1rem;">Cours 3 : Bases de données</h4>
+                    <p>Modèle relationnel, SQL, normalisation...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Documents SI -->
+        <section id="documents" class="section">
+            <div class="section-intro">
+                <h2>📋 Documents d'un Système d'Information</h2>
+                <p>Identifier, rédiger et organiser les documents SI</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Rubrique 3 : Documentation SI</h3>
+                <p class="card-description">Documents liés à un système d'information</p>
+                <div class="content-area">
+                    <div class="grid-2">
+                        <div>
+                            <h4 style="color: #667eea;">📌 Documents techniques</h4>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Cahier des charges</li>
+                                <li>Spécifications fonctionnelles</li>
+                                <li>Architecture technique</li>
+                                <li>Documentation utilisateur</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #667eea;">📌 Documents de gestion</h4>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li>Planning projet</li>
+                                <li>Analyse des risques</li>
+                                <li>Procédures</li>
+                                <li>Rapports d'avancement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Certifications -->
+        <section id="certifications" class="section">
+            <div class="section-intro">
+                <h2>🏆 Certifications et Attestations</h2>
+                <p>Valorisation des compétences acquises</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Rubrique 4 : Mes Certifications</h3>
+                <p class="card-description">Attestations et certifications obtenues</p>
+                
+                <div class="grid-2">
+                    <div class="cert-card">
+                        <h3>🎓 Certification 1</h3>
+                        <p>[Nom de la certification]</p>
+                        <p style="font-size: 0.9rem; margin-top: 1rem;">Date d'obtention : [Date]</p>
+                    </div>
+                    <div class="cert-card">
+                        <h3>🎓 Certification 2</h3>
+                        <p>[Nom de la certification]</p>
+                        <p style="font-size: 0.9rem; margin-top: 1rem;">Date d'obtention : [Date]</p>
+                    </div>
+                </div>
+
+                <div class="upload-zone">
+                    <p>📜 Déposez vos certificats (PDF ou image)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Projet Final -->
+        <section id="projet" class="section">
+            <div class="section-intro">
+                <h2>🚀 Projet Final</h2>
+                <p>Conception et réalisation d'un projet numérique</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Rubrique 5 : Mon Projet Final</h3>
+                <p class="card-description">Projet intégrant les compétences acquises</p>
+                <div class="content-area">
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">📌 Description du projet</h4>
+                    <p>[Décrivez votre projet ici]</p>
+                    
+                    <h4 style="color: #667eea; margin: 1.5rem 0 1rem;">🎯 Objectifs</h4>
+                    <ul style="margin-left: 2rem;">
+                        <li>Objectif 1</li>
+                        <li>Objectif 2</li>
+                        <li>Objectif 3</li>
+                    </ul>
+                    
+                    <h4 style="color: #667eea; margin: 1.5rem 0 1rem;">⚙️ Technologies utilisées</h4>
+                    <p>[Liste des technologies]</p>
+                    
+                    <h4 style="color: #667eea; margin: 1.5rem 0 1rem;">📊 Livrables</h4>
+                    <ul style="margin-left: 2rem;">
+                        <li>Documentation technique</li>
+                        <li>Code source</li>
+                        <li>Présentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Soutenance -->
+        <section id="soutenance" class="section">
+            <div class="section-intro">
+                <h2>🎤 Diaporama de Soutenance</h2>
+                <p>Présentation professionnelle du projet</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Rubrique 6 : Support de Soutenance</h3>
+                <p class="card-description">Synthétiser et présenter de manière claire</p>
+                <div class="content-area">
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">📊 Diaporama de présentation</h4>
+                    <p>Structure de la présentation :</p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                        <li><strong>Introduction</strong> - Contexte et objectifs</li>
+                        <li><strong>Développement</strong> - Méthodologie et réalisations</li>
+                        <li><strong>Démonstration</strong> - Présentation du projet</li>
+                        <li><strong>Conclusion</strong> - Bilan et perspectives</li>
+                    </ul>
+                </div>
+                <div class="upload-zone">
+                    <p>📊 Déposez votre diaporama (PDF, PPT...)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Ressources -->
+        <section id="ressources" class="section">
+            <div class="section-intro">
+                <h2>📚 Autres Ressources</h2>
+                <p>Veille technologique et enrichissement personnel</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Rubrique 7 : Ressources Complémentaires</h3>
+                <p class="card-description">Développer une capacité de veille et d'enrichissement</p>
+                <div class="content-area">
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">🔗 Liens utiles</h4>
+                    <ul class="file-list">
+                        <li class="file-item">
+                            <span>🌐 Ressource 1 - [Titre]</span>
+                            <a href="#" style="color: #667eea; text-decoration: none;">Voir →</a>
+                        </li>
+                        <li class="file-item">
+                            <span>🌐 Ressource 2 - [Titre]</span>
+                            <a href="#" style="color: #667eea; text-decoration: none;">Voir →</a>
+                        </li>
+                        <li class="file-item">
+                            <span>📖 Article - [Titre]</span>
+                            <a href="#" style="color: #667eea; text-decoration: none;">Lire →</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="info-box" style="margin-top: 2rem;">
+                        <h4 style="color: #667eea; margin-bottom: 0.5rem;">💡 Veille technologique</h4>
+                        <p>Sources suivies : blogs, newsletters, podcasts, conférences...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Portfolio Systèmes d'Information - MIAGE Semestre 5</p>
+        <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Développé avec HTML, CSS et JavaScript | Hébergé sur GitHub</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
