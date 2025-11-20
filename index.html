@@ -83,14 +83,14 @@
                     </a>
                 </li>
                 <li class="file-item">
-                    <span>🖼️ Capture d'écran 1 - Exercice</span>
-                    <a href="diagramme acteur_flux.pdf" download>
+                    <span>Diagramme acteur_flux</span>
+                    <a href="diagramme acteur_flux.pdf" download="diagramme acteur_flux.pdf">
                         Télécharger →
                     </a>
                 </li>
                 <li class="file-item">
-                    <span>🖼️ Capture d'écran 2 - Exercice</span>
-                    <a href="shema evenement_résultat.pdf" download>
+                    <span>Shema evenement_résultat</span>
+                    <a href="shema evenement_résultat.pdf" download="shema evenement_résultat.pdf">
                         Télécharger →
                     </a>
                 </li>
@@ -125,14 +125,13 @@
                     </a>
                 </li>
             
-            </div>
+            </ul>
 
             <div class="upload-zone">
                 <p>💡 Ajoutez vos fichiers ici</p>
                 <p style="font-size: 0.9rem; color: #999;">
                     Glissez-déposez vos documents ou cliquez pour sélectionner
                 </p>
-            </div>
             </div>
 
         </section>
@@ -288,32 +287,163 @@
         </section>
 
         <!-- Section 6: Soutenance -->
-
-
         <section id="soutenance" class="section">
-            <div class="section-intro">
-                <h2>🎤 Diaporama de Soutenance</h2>
-                <p>Présentation professionnelle du projet</p>
+            <h1 class="page-title">Soutenance de Projet</h1>
+
+            <!-- Lien du site -->
+            <div class="site-link-container">
+                <div class="site-link-header">
+                    <i class="fas fa-globe"></i>
+                    <h3>Lien du Site Web</h3>
+                </div>
+                <div class="site-link-content">
+                    <input type="url" id="siteUrl" placeholder="https://votre-site.com" readonly>
+                    <button class="btn-copy" onclick="copySiteUrl()">
+                        <i class="fas fa-copy"></i>
+                        Copier
+                    </button>
+                </div>
+                <small class="site-note">Cliquez sur le bouton pour copier le lien du site</small>
             </div>
 
-            <div class="card">
-                <h3 class="card-title">Rubrique 6 : Support de Soutenance</h3>
-                <p class="card-description">Synthétiser et présenter de manière claire</p>
-                <div class="content-area">
-                    <h4 style="color: #667eea; margin-bottom: 1rem;">📊 Diaporama de présentation</h4>
-                    <p>Structure de la présentation :</p>
-                    <ul style="margin-left: 2rem; margin-top: 1rem;">
-                        <li><strong>Introduction</strong> - Contexte et objectifs</li>
-                        <li><strong>Développement</strong> - Méthodologie et réalisations</li>
-                        <li><strong>Démonstration</strong> - Présentation du projet</li>
-                        <li><strong>Conclusion</strong> - Bilan et perspectives</li>
-                    </ul>
-                </div>
-                <div class="upload-zone">
+            <!-- Sommaire des livrables -->
+            <h2 class="section-subtitle">
+                <i class="fas fa-file-invoice"></i>
+                Sommaire des Livrables
+            </h2>
 
-
-                    <p>📊 Déposez votre diaporama (PDF, PPT...)</p>
+            <div class="livrables-grid">
+                <!-- Livrable 1 -->
+                <div class="livrable-item">
+                    <div class="livrable-header">
+                        <i class="fas fa-file-alt livrable-icon"></i>
+                        <div>
+                            <h3>Cahier des charges</h3>
+                            <span class="livrable-type">PDF</span>
+                        </div>
+                    </div>
+                    <p class="livrable-description">Document définissant les besoins et spécifications du projet</p>
+                    <a href="documents/cahier_des_charges.pdf" download class="btn-download-livrable">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </a>
                 </div>
+
+                <!-- Livrable 2 -->
+                <div class="livrable-item">
+                    <div class="livrable-header">
+                        <i class="fas fa-project-diagram livrable-icon"></i>
+                        <div>
+                            <h3>Diagrammes UML</h3>
+                            <span class="livrable-type">PDF</span>
+                        </div>
+                    </div>
+                    <p class="livrable-description">Schémas de modélisation (use case, classes, flux)</p>
+                    <a href="documents/diagrammes_uml.pdf" download class="btn-download-livrable">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </a>
+                </div>
+
+                <!-- Livrable 3 -->
+                <div class="livrable-item">
+                    <div class="livrable-header">
+                        <i class="fas fa-database livrable-icon"></i>
+                        <div>
+                            <h3>Modèle de données (MCD)</h3>
+                            <span class="livrable-type">PDF</span>
+                        </div>
+                    </div>
+                    <p class="livrable-description">Schéma conceptuel de la base de données</p>
+                    <a href="documents/mcd.pdf" download class="btn-download-livrable">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </a>
+                </div>
+
+                <!-- Livrable 4 -->
+                <div class="livrable-item">
+                    <div class="livrable-header">
+                        <i class="fas fa-chart-gantt livrable-icon"></i>
+                        <div>
+                            <h3>Planning (Gantt)</h3>
+                            <span class="livrable-type">PDF</span>
+                        </div>
+                    </div>
+                    <p class="livrable-description">Diagramme de Gantt du projet</p>
+                    <a href="documents/planning_gantt.pdf" download class="btn-download-livrable">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </a>
+                </div>
+
+                <!-- Livrable 5 -->
+                <div class="livrable-item">
+                    <div class="livrable-header">
+                        <i class="fas fa-file-code livrable-icon"></i>
+                        <div>
+                            <h3>Documentation technique</h3>
+                            <span class="livrable-type">PDF</span>
+                        </div>
+                    </div>
+                    <p class="livrable-description">Guide technique et d'installation</p>
+                    <a href="documents/doc_technique.pdf" download class="btn-download-livrable">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </a>
+                </div>
+
+                <!-- Livrable 6 -->
+                <div class="livrable-item">
+                    <div class="livrable-header">
+                        <i class="fas fa-book livrable-icon"></i>
+                        <div>
+                            <h3>Manuel utilisateur</h3>
+                            <span class="livrable-type">PDF</span>
+                        </div>
+                    </div>
+                    <p class="livrable-description">Guide d'utilisation pour les utilisateurs finaux</p>
+                    <a href="documents/manuel_utilisateur.pdf" download class="btn-download-livrable">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </a>
+                </div>
+
+                <!-- Livrable 7 -->
+                <div class="livrable-item">
+                    <div class="livrable-header">
+                        <i class="fas fa-file-powerpoint livrable-icon"></i>
+                        <div>
+                            <h3>Présentation finale</h3>
+                            <span class="livrable-type">PowerPoint</span>
+                        </div>
+                    </div>
+                    <p class="livrable-description">Support de présentation pour la soutenance</p>
+                    <a href="documents/soutenance_projet.pptx" download class="btn-download-livrable">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </a>
+                </div>
+
+                <!-- Livrable 8 -->
+                <div class="livrable-item">
+                    <div class="livrable-header">
+                        <i class="fas fa-video livrable-icon"></i>
+                        <div>
+                            <h3>Vidéo de soutenance</h3>
+                            <span class="livrable-type">MP4</span>
+                        </div>
+                    </div>
+                    <p class="livrable-description">Enregistrement de la présentation orale</p>
+                    <a href="documents/video_soutenance.mp4" download class="btn-download-livrable">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <p>📦 Retrouvez ici tous les livrables du projet ainsi que le lien vers le site développé.</p>
             </div>
         </section>
 
@@ -365,5 +495,24 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    function copySiteUrl() {
+        const urlInput = document.getElementById('siteUrl');
+        urlInput.select();
+        urlInput.setSelectionRange(0, 99999); // Pour mobile
+        
+        navigator.clipboard.writeText(urlInput.value).then(() => {
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Copié !';
+            btn.style.background = '#10b981';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+            }, 2000);
+        });
+    }
+    </script>
 </body>
 </html>
