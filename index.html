@@ -413,14 +413,14 @@
 
     <nav>
         <div class="nav-content">
-            <button class="nav-btn active" onclick="showSection('accueil')">Accueil</button>
-            <button class="nav-btn" onclick="showSection('travaux')">Travaux Demandés</button>
-            <button class="nav-btn" onclick="showSection('notes')">Notes de Cours</button>
-            <button class="nav-btn" onclick="showSection('documents')">Documents SI</button>
-            <button class="nav-btn" onclick="showSection('certifications')">Certifications</button>
-            <button class="nav-btn" onclick="showSection('projet')">Projet Final</button>
-            <button class="nav-btn" onclick="showSection('soutenance')">Soutenance</button>
-            <button class="nav-btn" onclick="showSection('ressources')">Ressources</button>
+            <button class="nav-btn active" data-section="accueil">Accueil</button>
+            <button class="nav-btn" data-section="travaux">Travaux Demandés</button>
+            <button class="nav-btn" data-section="notes">Notes de Cours</button>
+            <button class="nav-btn" data-section="documents">Documents SI</button>
+            <button class="nav-btn" data-section="certifications">Certifications</button>
+            <button class="nav-btn" data-section="projet">Projet Final</button>
+            <button class="nav-btn" data-section="soutenance">Soutenance</button>
+            <button class="nav-btn" data-section="ressources">Ressources</button>
         </div>
     </nav>
 
@@ -433,43 +433,43 @@
             </div>
 
             <div class="nav-grid">
-                <div class="nav-card" onclick="showSection('travaux')">
+                <div class="nav-card" data-section="travaux">
                     <i class="fas fa-tasks"></i>
                     <h3>Travaux Demandés</h3>
                     <p>Tous les TD, TP et exercices réalisés en classe</p>
                 </div>
 
-                <div class="nav-card" onclick="showSection('notes')">
+                <div class="nav-card" data-section="notes">
                     <i class="fas fa-book"></i>
                     <h3>Notes de Cours</h3>
                     <p>Mes prises de notes et documents de cours</p>
                 </div>
 
-                <div class="nav-card" onclick="showSection('documents')">
+                <div class="nav-card" data-section="documents">
                     <i class="fas fa-file-alt"></i>
                     <h3>Documents SI</h3>
                     <p>Documentation complète du système d'information</p>
                 </div>
 
-                <div class="nav-card" onclick="showSection('certifications')">
+                <div class="nav-card" data-section="certifications">
                     <i class="fas fa-certificate"></i>
                     <h3>Certifications</h3>
                     <p>Attestations et certifications obtenues</p>
                 </div>
 
-                <div class="nav-card" onclick="showSection('projet')">
+                <div class="nav-card" data-section="projet">
                     <i class="fas fa-rocket"></i>
                     <h3>Projet Final</h3>
                     <p>Adoo Sneakers - Progiciel de Gestion Intégré</p>
                 </div>
 
-                <div class="nav-card" onclick="showSection('soutenance')">
+                <div class="nav-card" data-section="soutenance">
                     <i class="fas fa-presentation"></i>
                     <h3>Soutenance</h3>
                     <p>Livrables et présentation du projet</p>
                 </div>
 
-                <div class="nav-card" onclick="showSection('ressources')">
+                <div class="nav-card" data-section="ressources">
                     <i class="fas fa-link"></i>
                     <h3>Ressources</h3>
                     <p>Veille technologique et ressources complémentaires</p>
@@ -945,6 +945,8 @@
     <script>
         // Navigation entre sections
         function showSection(sectionId) {
+            console.log('Tentative d\'affichage de la section:', sectionId);
+            
             // Masquer toutes les sections
             document.querySelectorAll('.section').forEach(section => {
                 section.classList.remove('active');
@@ -959,12 +961,15 @@
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 targetSection.classList.add('active');
+                console.log('Section affichée:', sectionId);
+            } else {
+                console.error('Section introuvable:', sectionId);
             }
             
             // Activer le bouton correspondant dans la barre de navigation
             const navButtons = document.querySelectorAll('.nav-btn');
             navButtons.forEach(btn => {
-                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(sectionId)) {
+                if (btn.getAttribute('data-section') === sectionId) {
                     btn.classList.add('active');
                 }
             });
@@ -1003,6 +1008,22 @@
                 const options = { year: 'numeric', month: 'long', day: 'numeric' };
                 lastUpdateElement.textContent = today.toLocaleDateString('fr-FR', options);
             }
+            
+            // Ajouter les événements de clic sur les boutons de navigation
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
+            
+            // Ajouter les événements de clic sur les cartes de navigation
+            document.querySelectorAll('.nav-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
             
             // S'assurer que la section accueil est active au chargement
             showSection('accueil');
